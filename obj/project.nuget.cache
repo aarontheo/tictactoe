@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nZiKWqmFkYZWge2DNPZPnznycZ1FyMmaaZCGgB0CAkkmB433npfbGMRcK8jFSBocAY9FL7e5II5kGtukOCt0AA==",
+  "dgSpecHash": "C3E9MqrL2S/oqSMDFA7kRArFcEWQA+VhmDuvb9iQwBe/AF9xnVqlTkZOk7hajIx6bcAkplU04tmlehU0yPg65Q==",
   "success": true,
-  "projectFilePath": "/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/tictactoe.csproj",
+  "projectFilePath": "/Users/aarontheobald/Desktop/Projects/C#/CSE210/tictactoe/tictactoe.csproj",
   "expectedPackageFiles": [
     "/Users/aarontheobald/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.16/microsoft.netcore.app.host.osx-x64.5.0.16.nupkg.sha512"
   ],

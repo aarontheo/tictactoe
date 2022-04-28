@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/tictactoe.csproj": {}
+    "/Users/aarontheobald/Desktop/Projects/C#/CSE210/tictactoe/tictactoe.csproj": {}
   },
   "projects": {
-    "/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/tictactoe.csproj": {
+    "/Users/aarontheobald/Desktop/Projects/C#/CSE210/tictactoe/tictactoe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/tictactoe.csproj",
+        "projectUniqueName": "/Users/aarontheobald/Desktop/Projects/C#/CSE210/tictactoe/tictactoe.csproj",
         "projectName": "tictactoe",
-        "projectPath": "/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/tictactoe.csproj",
+        "projectPath": "/Users/aarontheobald/Desktop/Projects/C#/CSE210/tictactoe/tictactoe.csproj",
         "packagesPath": "/Users/aarontheobald/.nuget/packages/",
-        "outputPath": "/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/",
+        "outputPath": "/Users/aarontheobald/Desktop/Projects/C#/CSE210/tictactoe/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/aarontheobald/.nuget/NuGet/NuGet.Config"
