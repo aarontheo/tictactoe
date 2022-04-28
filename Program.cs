@@ -11,7 +11,7 @@ namespace tictactoe
             board[0,0] = true;
             for (int r = 0; r < size; r++){
                 for (int c = 0; c < size; c++){
-                    
+                    Console.Write("hello");
                 }
             }
         }
