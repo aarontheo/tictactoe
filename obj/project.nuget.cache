@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "nZiKWqmFkYZWge2DNPZPnznycZ1FyMmaaZCGgB0CAkkmB433npfbGMRcK8jFSBocAY9FL7e5II5kGtukOCt0AA==",
+  "success": true,
+  "projectFilePath": "/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/tictactoe.csproj",
+  "expectedPackageFiles": [
+    "/Users/aarontheobald/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.16/microsoft.netcore.app.host.osx-x64.5.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

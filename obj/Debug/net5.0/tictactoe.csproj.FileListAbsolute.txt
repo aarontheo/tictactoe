@@ -1,0 +1,16 @@
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/bin/Debug/net5.0/tictactoe
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/bin/Debug/net5.0/tictactoe.deps.json
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/bin/Debug/net5.0/tictactoe.runtimeconfig.json
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/bin/Debug/net5.0/tictactoe.runtimeconfig.dev.json
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/bin/Debug/net5.0/tictactoe.dll
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/bin/Debug/net5.0/tictactoe.pdb
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.csproj.AssemblyReference.cache
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.AssemblyInfoInputs.cache
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.AssemblyInfo.cs
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.csproj.CoreCompileInputs.cache
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.dll
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/refint/tictactoe.dll
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.pdb
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/tictactoe.genruntimeconfig.cache
+/Users/aarontheobald/Desktop/Projects/C#/assignments/tictactoe/obj/Debug/net5.0/ref/tictactoe.dll
