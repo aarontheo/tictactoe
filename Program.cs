@@ -116,6 +116,7 @@ namespace tictactoe
                 MakeTurn(board, cp);
                 if (CheckWin(board, cp+1))
                 {
+                    Console.Clear();
                     DrawBoard(board);
                     Console.WriteLine("Congratulations, "+players[cp]+" wins!");
                     goto win;
