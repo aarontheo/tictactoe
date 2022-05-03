@@ -48,16 +48,18 @@ namespace tictactoe
         }
         static void Main(string[] args)
         {
-            
             int size = 3;
-            char[,] board = new char[size, size];
-            board[0, 0] = 'X';
-            Console.Write("This is an empty character: "+board[1,1]);
-            //do while loop
+            int[] players = new int[2];
+            int[,] board = new int[size, size];
+            do {
+                Console.Clear();
+                DrawBoard(board);
+
+            } while(true);
                 //foreach player
                     //print the board to the console
                     //prompt current player for their move
-                //DrawBoard(board);
+                DrawBoard(board);
             //while game is running
         }
     }
