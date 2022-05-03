@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace tictactoe
 {
@@ -9,13 +9,28 @@ namespace tictactoe
         static void MakeTurn(int[,] board, int player)
         {
             //prompt player for position
-            Console.Write(players[player]+", enter a position on the board!");
-            int pos = Console.Read();
-            //check if the square is a zero
+            Console.Write(players[player] + ", enter a position on the board: ");
+            int position;
+            while (!int.TryParse(Console.ReadLine(),out position));
+            Console.WriteLine("DEBUG position"+position);
+            var pos = (x: position-1 % board.GetLength(0), y: position-1 / board.GetLength(1));
+            //check if the square is a zero, prompt again until it is
             while (true)
             {
-                
+                if (board[pos.x, pos.y] != 0)
+                {
+                    Console.Write("\nThat space is already taken! Try again: ");
+                    while (!int.TryParse(Console.ReadLine(),out position));
+                    pos = (x: position-1 % board.GetLength(0), y: position-1 / board.GetLength(1));
+                    Console.WriteLine("DEBUG: pos: "+pos);
+                }
+                else
+                {
+                    break;
+                }
             }
+            Console.WriteLine("PLAYER: "+player);
+            board[pos.x, pos.y] = player;
         }
         static int CheckWin(int[,] board, int player)
         {
@@ -30,39 +45,37 @@ namespace tictactoe
             {
                 for (int j = 0; j < rows; j++)
                 {
-                    if (board[i, j] == 1) //if the square has a character
+                    if (board[i, j] == 0) //if the square is 0, draw the index+1
                     {
-                        Console.Write('X');
+                        Console.Write(j + rows * i + 1);
                     }
-                    else if (board[i, j] == 2)
+                    else
                     {
-                        Console.Write('O');
+                        Console.Write(players[board[i, j] - 1]);
                     }
-                    else //if the square is 0, draw the index+1
+                    if (j != cols - 1)
                     {
-                        Console.Write(j+rows*i+1);
-                    }
-                    if (j != cols-1){
                         Console.Write('|');
                     }
                 }
                 Console.Write('\n');
             }
         }
-        static int CheckWin(int[,] board,int player)
-        {
-            return 5;
-        }
+
         static void Main(string[] args)
         {
             int size = 3;
-            int[] players = new int[2];
             int[,] board = new int[size, size];
-            do {
-                Console.Clear();
-                DrawBoard(board);
-
-            } while(true);
+            board[0, 0] = 1;
+            while (true)
+            {
+                for (int i = 0; i < players.Length; i++)
+                {
+                    //Console.Clear();
+                    DrawBoard(board);
+                    MakeTurn(board,i);
+                }
+            }
         }
     }
 }
