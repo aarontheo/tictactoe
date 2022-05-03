@@ -27,54 +27,57 @@ namespace tictactoe
         }
         static bool CheckWin(int[,] board, int player)
         {
-            int height = board.GetLength(0);
-            int width = board.GetLength(1);
+            int size = board.GetLength(0);
+            bool win = false;
             //check rows, check columns, check the two diagonals
             //check rows
-            for (int y = 0; y < height; y++)
+            Console.WriteLine("DEBUG: Checking win for player "+player);
+            for (int y = 0; y < size; y++)
             {
-                for (int x = 0; x < width; x++)
+                Console.WriteLine("DEBUG: searching row "+y);
+                for (int x = 0; x < size; x++)
                 {
+                    Console.WriteLine($"DEBUG: checking cell {x},{y}");
+                    Console.WriteLine("contents "+board[x, y]);
                     if (board[x, y] != player)
                     {
-                        goto skip; //if the line is not contiguous, no need to continue with the loop
+                        Console.WriteLine("SKIPPING");
+                        goto skip;
                     }
                 }
+                Console.WriteLine("Return on iteration: "+y);
                 return true;
                 skip:;
             }
             //check columns
-            for (int y = 0; y < width; y++)
-            {
-                for (int x = 0; x < width; x++)
-                {
-                    if (board[y, x] != player)
-                    {
-                        goto skip; //if the line is not contiguous, no need to continue with the loop
-                    }
-                    return true;
-                }
-                skip:;
-            }
-            //check the two diagonals
-            //top-left to bottom-right
-            for (int i = 0; i < height; i++)
-            {
-                if (board[i, i] == player)
-                {
-                    continue; //if the line is not contiguous, no need to continue with the loop
-                }
-                break;
-            }
-            for (int i = 0; i < height; i++)
-            {
-                if (board[i, height - i] == player)
-                {
-                    continue; //if the line is not contiguous, no need to continue with the loop
-                }
-                break;
-            }
-            return false;
+            // for (int y = 0; y < size; y++)
+            // {
+            //     for (int x = 0; x < size; x++)
+            //     {
+            //         if (board[y, x] != player)
+            //         {
+
+            //         }
+            //     }
+            // }
+            // //check the two diagonals
+            // //top-left to bottom-right
+            // for (int i = 0; i < size; i++)
+            // {
+            //     if (board[i, i] == player)
+            //     {
+
+            //     }
+            // }
+            // for (int i = 0; i < size; i++)
+            // {
+            //     if (board[i, size - i] == player)
+            //     {
+
+            //     }
+            // }
+            // end:
+            return win;
         }
         static void DrawBoard(int[,] board)
         {
@@ -105,18 +108,17 @@ namespace tictactoe
         {
             int size = 3;
             int[,] board = new int[size,size];
-            for (int b = 0; b < board.GetLength(0) * board.GetLength(1); b++)
+            int cp;
+            for (int b = 0; b < Math.Pow(board.GetLength(0),2); b++)
             {
-                for (int i = 0; i < players.Length; i++)
+                cp = b%players.Length;
+                //Console.Clear();
+                DrawBoard(board);
+                MakeTurn(board, cp);
+                if (CheckWin(board, cp+1))
                 {
-                    Console.Clear();
-                    DrawBoard(board);
-                    MakeTurn(board, i);
-                    if (CheckWin(board, i))
-                    {
-                        Console.WriteLine("Congratulations, "+players[i]+" wins!");
-                        goto win;
-                    }
+                    Console.WriteLine("Congratulations, "+players[cp]+" wins!");
+                    goto win;
                 }
             }
             Console.WriteLine("The game is a draw! Nobody wins.");
