@@ -39,7 +39,7 @@ namespace tictactoe
                         goto skip; //say hello to my new friend, skip
                     }
                 }
-                Console.WriteLine("Return on iteration: "+y);
+                //Console.WriteLine("Return on iteration: "+y);
                 return true;
                 skip:;
             }
@@ -53,7 +53,7 @@ namespace tictactoe
                         goto skip;
                     }
                 }
-                Console.WriteLine("Return on iteration: "+y);
+                //Console.WriteLine("Return on iteration: "+y);
                 return true;
                 skip:;
             }
