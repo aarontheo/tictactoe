@@ -1,17 +1,28 @@
-﻿using System;
+using System;
 
 namespace tictactoe
 {
     class Program
     {
-        static char[] players = new char[] {'X','O'};
+        static char[] players = new char[] { 'X', 'O' };
+
+        static void MakeTurn(int[,] board, int player)
+        {
+            //prompt player for position
+            Console.Write(players[player]+", enter a position on the board!");
+            int pos = Console.Read();
+            //check if the square is a zero
+            while (true)
+            {
+                
+            }
+        }
+        static int CheckWin(int[,] board, int player)
+        {
+            //check for a line of the given int in the table board.
+            return 5;
+        }
         static void DrawBoard(int[,] board)
-        /*
-        TODO: Change the way that boards larger than 3x3 are displayed,
-        some ideas:
-        -display in HEX instead, supports a 4x4 board without kerning issue
-        -use char codes, add to display index to start with uppercase alphabet codes?
-        */
         {
             int cols = board.GetLength(0); //gets the number of columns
             int rows = board.GetLength(1); //gets the number of rows
@@ -22,7 +33,8 @@ namespace tictactoe
                     if (board[i, j] == 1) //if the square has a character
                     {
                         Console.Write('X');
-                    }else if(board[i,j] == 2)
+                    }
+                    else if (board[i, j] == 2)
                     {
                         Console.Write('O');
                     }
@@ -37,12 +49,7 @@ namespace tictactoe
                 Console.Write('\n');
             }
         }
-
-        static void MakeTurn(int[,] board,char playerChar)
-        {
-
-        }
-        static int CheckWin()
+        static int CheckWin(int[,] board,int player)
         {
             return 5;
         }
@@ -56,11 +63,6 @@ namespace tictactoe
                 DrawBoard(board);
 
             } while(true);
-                //foreach player
-                    //print the board to the console
-                    //prompt current player for their move
-                DrawBoard(board);
-            //while game is running
         }
     }
 }
