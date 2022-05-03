@@ -28,7 +28,6 @@ namespace tictactoe
         static bool CheckWin(int[,] board, int player)
         {
             int size = board.GetLength(0);
-            bool win = false;
             //check rows, check columns, check the two diagonals
             //check columns
             for (int y = 0; y < size; y++)
