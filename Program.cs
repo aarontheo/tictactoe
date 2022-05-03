@@ -19,9 +19,12 @@ namespace tictactoe
             {
                 for (int j = 0; j < rows; j++)
                 {
-                    if (board[i, j] != 'f') //if the square has a character
+                    if (board[i, j] == 1) //if the square has a character
                     {
                         Console.Write('X');
+                    }else if(board[i,j] == 2)
+                    {
+                        Console.Write('O');
                     }
                     else //if the square is 0, draw the index+1
                     {
