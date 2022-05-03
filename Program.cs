@@ -71,7 +71,6 @@ namespace tictactoe
             skipjr: //hello
             for (int i = 0; i < size; i++)
             {
-                Console.WriteLine($"CHECKING CELL AT {i}, {size-1 - i}");
                 if (board[i, size-1 - i] != player)
                 {
                     return false;
@@ -112,7 +111,7 @@ namespace tictactoe
             for (int b = 0; b < Math.Pow(board.GetLength(0),2); b++)
             {
                 cp = b%players.Length;
-                //Console.Clear();
+                Console.Clear();
                 DrawBoard(board);
                 MakeTurn(board, cp);
                 if (CheckWin(board, cp+1))
