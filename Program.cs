@@ -30,18 +30,27 @@ namespace tictactoe
             int size = board.GetLength(0);
             bool win = false;
             //check rows, check columns, check the two diagonals
-            //check rows
-            Console.WriteLine("DEBUG: Checking win for player "+player);
+            //check columns
             for (int y = 0; y < size; y++)
             {
-                Console.WriteLine("DEBUG: searching row "+y);
                 for (int x = 0; x < size; x++)
                 {
-                    Console.WriteLine($"DEBUG: checking cell {x},{y}");
-                    Console.WriteLine("contents "+board[x, y]);
                     if (board[x, y] != player)
                     {
-                        Console.WriteLine("SKIPPING");
+                        goto skip; //say hello to my new friend, skip
+                    }
+                }
+                Console.WriteLine("Return on iteration: "+y);
+                return true;
+                skip:;
+            }
+            //check rows
+            for (int y = 0; y < size; y++)
+            {
+                for (int x = 0; x < size; x++)
+                {
+                    if (board[y, x] != player)
+                    {
                         goto skip;
                     }
                 }
@@ -49,35 +58,26 @@ namespace tictactoe
                 return true;
                 skip:;
             }
-            //check columns
-            // for (int y = 0; y < size; y++)
-            // {
-            //     for (int x = 0; x < size; x++)
-            //     {
-            //         if (board[y, x] != player)
-            //         {
-
-            //         }
-            //     }
-            // }
-            // //check the two diagonals
-            // //top-left to bottom-right
-            // for (int i = 0; i < size; i++)
-            // {
-            //     if (board[i, i] == player)
-            //     {
-
-            //     }
-            // }
-            // for (int i = 0; i < size; i++)
-            // {
-            //     if (board[i, size - i] == player)
-            //     {
-
-            //     }
-            // }
-            // end:
-            return win;
+            //check the two diagonals
+            //top-left to bottom-right
+            for (int i = 0; i < size; i++)
+            {
+                if (board[i, i] != player)
+                {
+                    goto skipjr; //say hello to his son, skipjr
+                }
+            }
+            return true;
+            skipjr: //hello
+            for (int i = 0; i < size; i++)
+            {
+                Console.WriteLine($"CHECKING CELL AT {i}, {size-1 - i}");
+                if (board[i, size-1 - i] != player)
+                {
+                    return false;
+                }
+            }
+            return true;
         }
         static void DrawBoard(int[,] board)
         {
@@ -117,6 +117,7 @@ namespace tictactoe
                 MakeTurn(board, cp);
                 if (CheckWin(board, cp+1))
                 {
+                    DrawBoard(board);
                     Console.WriteLine("Congratulations, "+players[cp]+" wins!");
                     goto win;
                 }
