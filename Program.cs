@@ -5,37 +5,30 @@ namespace tictactoe
     class Program
     {
         static char[] players = new char[] { 'X', 'O' };
-
         static void MakeTurn(int[,] board, int player)
         {
-            //prompt player for position
-            Console.Write(players[player] + ", enter a position on the board: ");
-            int position;
-            while (!int.TryParse(Console.ReadLine(),out position));
-            Console.WriteLine("DEBUG position"+position);
-            var pos = (x: position-1 % board.GetLength(0), y: position-1 / board.GetLength(1));
-            //check if the square is a zero, prompt again until it is
-            while (true)
+            int width = board.GetLength(0);
+            int height = board.GetLength(1);
+            Console.WriteLine("DEBUG Player: " + players[player] + player);
+            Console.WriteLine("Player " + players[player] + ", pick a square on the board: ");
+            int pos;
+            //Guarantee the input is a valid int on the board
+            input: //HOLY MOLY THATS COOL
+            while (!int.TryParse(Console.ReadLine(), out pos) || pos < 1 || pos > (board.GetLength(0) * board.GetLength(1)))
             {
-                if (board[pos.x, pos.y] != 0)
-                {
-                    Console.Write("\nThat space is already taken! Try again: ");
-                    while (!int.TryParse(Console.ReadLine(),out position));
-                    pos = (x: position-1 % board.GetLength(0), y: position-1 / board.GetLength(1));
-                    Console.WriteLine("DEBUG: pos: "+pos);
-                }
-                else
-                {
-                    break;
-                }
+                Console.Write("That's not a valid input! Try again: ");
             }
-            Console.WriteLine("PLAYER: "+player);
-            board[pos.x, pos.y] = player;
+            pos--;
+            if (board[pos / height, pos % width] != 0){
+                Console.WriteLine("That space is already taken! Try again:");
+                goto input; //IM FREAKING OUT RN
+            }
+                board[pos / height, pos % width] = player + 1;
         }
-        static int CheckWin(int[,] board, int player)
+        static bool CheckWin(int[,] board, int player)
         {
             //check for a line of the given int in the table board.
-            return 5;
+            return false;
         }
         static void DrawBoard(int[,] board)
         {
@@ -66,14 +59,13 @@ namespace tictactoe
         {
             int size = 3;
             int[,] board = new int[size, size];
-            board[0, 0] = 1;
-            while (true)
+            for (int b=0;b<board.GetLength(0)*board.GetLength(1);b++)
             {
                 for (int i = 0; i < players.Length; i++)
                 {
-                    //Console.Clear();
+                    Console.Clear();
                     DrawBoard(board);
-                    MakeTurn(board,i);
+                    MakeTurn(board, i);
                 }
             }
         }
